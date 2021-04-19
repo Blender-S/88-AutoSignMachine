@@ -2,35 +2,24 @@
 
 本地手机方式运行（安卓）
 ```
-	首先下载安装好termux
-	打开termux
-	然后运行下面的命令(所有命令都是在英文输入状态下输入)
-
-	apt update
-
-	apt install git vim perl nodejs-lts wget curl nano cronie moreutils
-
-	git clone https://github.com/simo8102/88-AutoSignMachine.git
-
-
-	看下文件名字
-	记住那个88-AutoSignMachine
-
-	然后
-
-	mv   88-AutoSignMachine qd
-
-	进入这个文件夹里面
-
-	cd qd
-
-	npm install
-
-	等依赖包安装好了就行了
-	然后运行下面的命令
-
-	node index.js unicom --user 11111 --password 1111 --appid 1555555
-	
+首先下载安装好termux
+打开termux
+然后运行下面的命令(所有命令都是在英文输入状态下输入)
+apt update
+apt install git vim perl nodejs-lts wget curl nano cronie moreutils
+git clone https://github.com/simo8102/88-AutoSignMachine.git
+看下文件名字
+ls
+记住那个88-AutoSignMachine
+然后
+mv   88-AutoSignMachine qd
+进入这个文件夹里面
+cd qd
+npm install
+等依赖包安装好了就行了
+然后运行下面的命令
+node index.js unicom --user 11111 --password 1111 --appid 1555555
+node index.js unicom --user 11111 --password 1111 --appid 1555555 --tasks dailygameflow 只运行游戏(https://github.com/simo8102/88-AutoSignMachine/issues/167)
 ```
 如果多用户就
 启用`node index.js unicom --config default.json`表示配置文件
@@ -47,7 +36,7 @@
 ```
 本地手机方式运行（苹果）
 
-`苹果商店好像有个叫ish的你们去试下`
+`苹果商店好像有个叫ish的你们去试下`注意由于我并没有苹果设备本方法未测试也没法测试 请用户自行测试
 
 本地运行电脑端（win）
 ```
@@ -75,6 +64,7 @@ yum install git 或 apt-get install git
 3、同步代码到本地
 git clone https://github.com/simo8102/88-AutoSignMachine.git
 输入 下面的代码
+cd 88-AutoSignMachine
 npm install
 node index.js unicom --user 176*********** --password 13 --appid 0******************
 4、写个sh脚本 代码如下
