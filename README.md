@@ -1,5 +1,37 @@
 # 建议本地运行！！！
 
+2021-07-19 增加阅读1G,修复沃游戏 [来自@tanzl](https://github.com/tanzl)
+
+2021-05-17 本项目不在维护，接下来的看你们自己的了
+
+2021-06-08 更改api 修复沃游戏没网问题
+
+
+2021-05-25 用源码编译了一个能自动更新沃线路的wg版本请到[releases](https://github.com/simo8102/chinaunicom-AutoSignMachine/releases)下载或[点击这里](http://t.cn/A6tN2mr0)
+
+添加一个免流软件 [乌拉网游加速器](http://t.cn/A6tN2mr0)
+
+2121-05-07添加沃游戏线路具体如下：
+
+沃游戏线路
+
+[安卓软件下载](https://f-droid.org/repo/com.wireguard.android_486.apk) 
+
+苹果的话外网id下载WireGuard软件手动导入
+```
+[Interface]
+Address = 10.77.70.9/32
+DNS = 223.5.5.5
+PrivateKey = WO3IfoFcLHDYoh+1J29gyoyGGsDRsJVBggC3/6UdSU4=
+
+[Peer]
+AllowedIPs = 0.0.0.0/0
+Endpoint = 140.207.47.100:11000
+PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
+```
+
+导入配置后记得在编辑下线路的生效app不然不免
+
 本地手机方式运行（安卓）
 ```
 首先下载安装好termux
@@ -7,19 +39,20 @@
 然后运行下面的命令(所有命令都是在英文输入状态下输入)
 apt update
 apt install git vim perl nodejs-lts wget curl nano cronie moreutils
-git clone https://github.com/simo8102/88-AutoSignMachine.git
+git clone https://github.com/simo8102/chinaunicom-AutoSignMachine.git
 看下文件名字
 ls
-记住那个88-AutoSignMachine
+记住那个chinaunicom-AutoSignMachine
+
 然后
-mv   88-AutoSignMachine qd
+mv   chinaunicom-AutoSignMachine qd
 进入这个文件夹里面
 cd qd
 npm install
 等依赖包安装好了就行了
-然后运行下面的命令
+然后运行下面的命令（以后执行只需要输入下面代码即可）
 node index.js unicom --user 11111 --password 1111 --appid 1555555
-node index.js unicom --user 11111 --password 1111 --appid 1555555 --tasks dailygameflow 只运行游戏(https://github.com/simo8102/88-AutoSignMachine/issues/167)
+node index.js unicom --user 11111 --password 1111 --appid 1555555 --tasks dailygameflow 只运行游戏(https://github.com/simo8102/chinaunicom-AutoSignMachine/issues/167)
 ```
 如果多用户就
 启用`node index.js unicom --config default.json`表示配置文件
@@ -62,9 +95,9 @@ https://nodejs.org/zh-cn/download/package-manager/   根据官方文档的步骤
 ##2、安装git（此步可省略 )
 yum install git 或 apt-get install git 
 3、同步代码到本地
-git clone https://github.com/simo8102/88-AutoSignMachine.git
+git clone https://github.com/simo8102/chinaunicom-AutoSignMachine.git
 输入 下面的代码
-cd 88-AutoSignMachine
+cd chinaunicom-AutoSignMachine
 npm install
 node index.js unicom --user 176*********** --password 13 --appid 0******************
 4、写个sh脚本 代码如下
@@ -72,6 +105,8 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 多用户就在最后面在加一行node index.js unicom --user 176*********** --password 13 --appid 0******************有多少账号就添加多少（傻瓜式）
 你也可以根据这个https://github.com/simo8102/88-AutoSignMachine/blob/main/README.zh_CN.md   README的提示更改
 ```
+2021-05-01  修改sync_fork脚本代码
+
 2021-04-18  添加了sync_fork脚本
 
 2021-04-16 添加自动兑换1G流量，并不是都能兑换成功（已移除）
@@ -107,4 +142,7 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 | UNICOM_APPID | http://m.client.10010.com/mobileService/customer/getclientconfig.htm?appId= 开抓包 你再打开手厅就能找到了 |
 | NOTIFY_SCKEY | [service酱的key](http://sc.ftqq.com/?c=code) |
 |     TOKEN    | [github_token] |
-|     TOKEN1   | [personal_token] |
+
+
+
+by_安柠
